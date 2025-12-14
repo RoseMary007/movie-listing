@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* App container */
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* Heading */
+.app h1 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+/* Inputs */
+input {
+  padding: 12px 14px;
+  width: 260px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px rgba(255, 71, 87, 0.6);
+}
+
+/* Button */
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff4757, #ff6b81);
+  color: white;
+  font-size: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 71, 87, 0.4);
+}
+
+/* Movie grid */
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Movie card */
+.movie-card {
+  background: rgba(30, 30, 30, 0.95);
+  padding: 12px;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Poster */
+.movie-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Movie text */
+.movie-card h3 {
+  margin: 12px 0 6px;
+  font-size: 16px;
+}
+
+.movie-card p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* Error message */
+.error {
+  margin-top: 20px;
+  color: #ff6b6b;
+  font-weight: 500;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+.details-page {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.details-poster {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.details-info h1 {
+  margin-top: 0;
+}
+
+.meta {
+  opacity: 0.85;
+  margin: 8px 0;
+}
+
+.rating {
+  color: #feca57;
+  margin-bottom: 20px;
+}
+
+.details-info h3 {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .details-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-poster {
+    width: 90%;
+  }
+}
+/* Overlay background */
+.details-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal container */
+.details-page {
+  position: relative;
+  background: #121212;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  border-radius: 14px;
+  padding: 25px;
+  display: flex;
+  gap: 25px;
+  overflow: hidden;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Poster image FIX */
+.details-poster {
+  width: 260px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* Scrollable content */
+.details-info {
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Scrollbar styling (optional) */
+.details-info::-webkit-scrollbar {
+  width: 6px;
+}
+
+.details-info::-webkit-scrollbar-thumb {
+  background: #ff4757;
+  border-radius: 5px;
+}
+
+.meta {
+  opacity: 0.85;
+}
+
+.rating {
+  color: #feca57;
+  margin-bottom: 15px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .details-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .details-poster {
+    width: 200px;
+    height: 300px;
+  }
+
+  .details-info {
+    max-height: 45vh;
+  }
+}
