@@ -6,7 +6,7 @@ Users can search movies, view detailed information in a modal, and explore movie
 ---
 
 ## 🚀 Live Demo
-👉 
+👉 https://movie-listing-rosemary007.vercel.app/
 
 ---
 
